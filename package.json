@@ -2,27 +2,34 @@
   "name": "electron-svelte",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main/index.js",
+  "build": {
+    "appId": "electron.svelte"
+  },
   "scripts": {
+    "postinstall": "electron-builder install-app-deps",
     "start": "electron src/main/index.js",
     "dev": "cross-env NODE_ENV=development npm start",
     "web:dev": "webpack-dev-server --content-base public",
-    "bundle": "cross-env NODE_ENV=production webpack"
+    "web:bundle": "cross-env NODE_ENV=production webpack",
+    "clean": "rimraf dist",
+    "pack": "npm run clean && electron-builder --dir --mac --config ./config/builder-config.json",
+    "dist": "npm run clean && electron-builder --config ./config/builder-config.json"
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "cross-env": "^5.2.1",
     "css-loader": "^3.2.0",
     "electron": "^6.0.7",
+    "electron-builder": "^21.2.0",
     "mini-css-extract-plugin": "^0.8.0",
+    "rimraf": "^3.0.0",
     "style-loader": "^1.0.0",
     "svelte": "^3.9.2",
-    "webpack-dev-server": "^3.8.0"
-  },
-  "devDependencies": {
     "svelte-loader": "^2.13.6",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.8"
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
   }
 }

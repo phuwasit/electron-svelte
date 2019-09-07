@@ -1,0 +1,17 @@
+{
+  "directories": {
+    "output": "dist"
+  },
+  "files": [
+    "**/*",
+    "!config",
+    "!src/renderer",
+    "!webpack.config.js"
+  ],
+  "mac": {
+    "category": "public.app-category.lifestyle",
+    "target": [
+      "dmg"
+    ]
+  }
+}
