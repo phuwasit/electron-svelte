@@ -13,8 +13,8 @@
     "web:dev": "webpack-dev-server --content-base public",
     "web:bundle": "cross-env NODE_ENV=production webpack",
     "clean": "rimraf dist",
-    "pack": "npm run clean && electron-builder --dir --mac --config ./config/builder-config.json",
-    "dist": "npm run clean && electron-builder --config ./config/builder-config.json"
+    "pack": "electron-builder --dir --mac --config ./config/builder-config.json",
+    "dist": "electron-builder --config ./config/builder-config.json"
   },
   "author": "",
   "license": "MIT",
