@@ -2,6 +2,12 @@
   "directories": {
     "output": "dist"
   },
+  "public": [
+    {
+      "provider": "github",
+      "releaseType": "prerelease"
+    }
+  ],
   "files": [
     "**/*",
     "!config",
