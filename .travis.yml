@@ -17,9 +17,10 @@ cache:
   - "$HOME/.cache/electron-builder"
 script:
 - |
+  echo $GH_TOKEN
   if [ "$TRAVIS_OS_NAME" == "linux" ]; then
     docker run --rm \
-      --env-file <(env | grep -iE 'GH_TOKEN') \
+      --env GH_TOKEN=${GH_TOKEN} \
       -v ${PWD}:/project \
       -v ~/.cache/electron:/root/.cache/electron \
       -v ~/.cache/electron-builder:/root/.cache/electron-builder \
