@@ -35,15 +35,14 @@ branches:
   - master
   - "/^v\\d+\\.\\d+\\.\\d+$/"
 before_deploy:
-  # Set up git user name and tag this commit
-  - git config --local user.name "phuwasit"
-  - git config --local user.email "phuwasit@gmail.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-  - git tag $TRAVIS_TAG
+- git config --local user.name "phuwasit"
+- git config --local user.email "phuwasit@gmail.com"
+- export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+- git tag $TRAVIS_TAG
 deploy:
   provider: releases
   api_key:
-    secure: B/S0BdEPvqkyitxi/f5iXDYrFZdhK7cJjQfsJESOm0HuE1D21FQq7x48pcfZSvSkgbs9G4ioYnNaXmK4BkPWTjuD4hAp52zpuN4jOSR2MlSHmuTwAVPwPhH0CRL0Neep5jRoBohQrIaUA2sE2/4uXA15q8JGt1mk44o8b49GQ/Sp6gxpEl34QV/XSfFobVWuNXq94TgE8byrWUiqy3/UanzezKAhHdqiU/rSYtjlbtAt1NCZ6Ft2IT8GwAJuwGJfiV+MR9v7LglREQEit5Sx02NswlbIQkawLkQWT1YQtMnFdbnK8SXAUxGOPtkDd3PErcXDUv3cqSNkcTEW+beg4OdBkIc3O+Pb7QYAlLsgm9Z39rWEfVO8N1w4PN0pznTjcWCAs6rn83PPD/Y4R17XH0lDgPqEFZ+BtNcHtd1LKHP7aOZpWNgfxJxiHSLGParKTVsWnI3jSpKLeHVxFTnuwDhJfpbp1FyogYMuBVVJT/fnDuXNEKUThu7QpkV1PUxkVB3Iw2XoJ3IBtnZOMJ1J9ZPj/SED7JgAW6LBo6crHdZk3oncHzAcsinZqmYTbP1K62K9HqswhVPorEG1J0QATxPtICnayjmKm71Z/HeMzpJdu4hLodZ2UjeRZLmxsDv5I3eCVCP/Z+ebCDusgrjmB7AP2UgUDloV97T6cNWs8u0=
+    secure: vbjVpHHWyIJDNRSr22JGi+tYFZdWUCiKlNXWWpJtV+XGZL48fQRCPjj2ARap9xHCyEwSFzCru9KyLzspOmFNW++J2Xfv0csG1Ju1W1QB3yxvMHMtuevk6ias2aOQ6QPYohu6V2WdYSgAccHgSs4NbW3xqtrT5a7ha+LzUcpGE159omK+xhcZ2CiKmbz5sQyrA1cKCuWA4NNFnlJSG52gMypbCnE55WK/i4gQ5BXuhPUrdEB2S9I8NceMOWSuOtlYR8E24x9rrExEzdUgbDkhkfNsqgu5h3ChyozJrAsjLefeRQSRdGE3JBK/apGheLvMOXd79orx+fwLRZgIyvh0ZR5QNwidyPL5FJHKBy17LzxjZ0Aw3JO/imfn0HfnRms6IDobO/QKlkb2+zqv/RiotlIykLlulBN63BI2mDVbd9RpKOICfXnCU/UtnW5jcYyvy+fRFApRzKOpd7KqIb8iKMmX7wo6qMI8fWnJpqUv3uYhu5nt0BtsWaHaFBUXmphaGEbXKMPAILytzestzWGa8tj7NQDqYpQLg/kQgG58L5oMR5Hgh8MCe+RDfpysTHQHNyAqIOFvmoqh57xMdaj7V63zVURmvYHr1u1NWfoavOVrDrRn0sd3Skn1QyQJcSplOMMTbIa3NpHiOV2n/mBcyT7pIffXO5K3Hci0RU2pW44=
   file_glob: true
   file: 
     - "dist/*.{yml,dmg,exe,blockmap}"
@@ -51,4 +50,4 @@ deploy:
   skip_cleanup: true
   on:
     repo: phuwasit/electron-svelte
-    # tags: true
+    
