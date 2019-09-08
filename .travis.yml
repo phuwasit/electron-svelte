@@ -37,8 +37,8 @@ branches:
 before_deploy:
 - git config --local user.name "phuwasit"
 - git config --local user.email "phuwasit@gmail.com"
-- export TRAVIS_TAG=${npm version patch}
-- git tag $TRAVIS_TAG
+- npm version patch -m "chore: release version %s [skip ci]"
+- git push --tags
 deploy:
   provider: releases
   api_key:
