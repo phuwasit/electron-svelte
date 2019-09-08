@@ -37,7 +37,7 @@ branches:
 before_deploy:
 - git config --local user.name "phuwasit"
 - git config --local user.email "phuwasit@gmail.com"
-- npm version patch -m "chore: release version %s [skip ci]"
+- npm version patch
 - git push --tags
 deploy:
   provider: releases
