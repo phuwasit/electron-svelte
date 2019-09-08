@@ -2,12 +2,7 @@
   "directories": {
     "output": "dist"
   },
-  "publish": [
-    {
-      "provider": "github",
-      "releaseType": "prerelease"
-    }
-  ],
+  "publish": [],
   "files": [
     "**/*",
     "!config",
